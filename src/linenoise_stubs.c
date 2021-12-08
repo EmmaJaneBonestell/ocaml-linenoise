@@ -1,4 +1,8 @@
 // OCaml declarations
+#ifndef USE_UTF8
+#define USE_UTF8
+#endif
+
 #include <caml/alloc.h>
 #include <caml/memory.h>
 #include <caml/callback.h>
@@ -7,7 +11,9 @@
 #include <errno.h>
 #include <assert.h>
 
-#include "linenoise_src.h"
+#include "linenoise.h"
+#include "stringbuf.h"
+#include "utf8.h"
 
 // Ripped from ctypes
 #define Val_none Val_int(0)
